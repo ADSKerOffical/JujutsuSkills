@@ -1,0 +1,250 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+
+local Window = OrionLib:MakeWindow({Name = "Budgie Hub", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddDropdown({
+	Name = "Summon",
+	Default = "1",
+	Options = {"Mahoraga", "Beast", "GTA?"},
+	Callback = function(Value)
+		if Value == "Mahoraga" then
+		game:GetService("ReplicatedStorage").Maho:FireServer()
+		end
+		if Value == "Beast" then
+		game:GetService("ReplicatedStorage").beast:FireServer()
+		end
+		if Value == "GTA?" then
+		game:GetService("ReplicatedStorage").CJ:FireServer()
+		end
+	end    
+})
+
+Tab:AddDropdown({
+	Name = "Domain",
+	Default = "1",
+	Options = {"Domain 1", "Domain 2", "Domain 3", "Domain 4", "Domain 5", "Domain ADM", "MalevolentShrine0"},
+	Callback = function(Value)
+		if Value == "Domain 1" then
+		game:GetService("ReplicatedStorage").Domain1:FireServer()
+		end
+		if Value == "Domain 2" then
+		game:GetService("ReplicatedStorage").Domain2:FireServer()
+		end
+		if Value == "Domain 3" then
+		game:GetService("ReplicatedStorage").Domain3:FireServer()
+		end
+		if Value == "Domain 4" then
+		game:GetService("ReplicatedStorage").Domain4:FireServer()
+		end
+		if Value == "Domain 5" then
+		game:GetService("ReplicatedStorage").Domain5:FireServer()
+		end
+		if Value == "Domain ADM" then
+		game:GetService("ReplicatedStorage").Events.DomainADM:FireServer()
+		end
+		if Value == "MalevolentShrine0" then
+		game:GetService("ReplicatedStorage"). MalevolentShrine0:FireServer()
+		end
+	end    
+})
+
+Tab:AddDropdown({
+	Name = "Purple",
+	Default = "1",
+	Options = {"Purple", "Purple v2", "Imagi", "Imaginary Purple"},
+	Callback = function(Value)
+		if Value == "Imagi" then
+		game:GetService("ReplicatedStorage").Remotes.Imagi:FireServer()
+		end
+		if Value == "Imaginary Purple" then
+		game:GetService("ReplicatedStorage").Remotes.ImaginaryPurple:FireServer()
+		end
+		if Value == "Purple" then
+		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Purple"):FireServer()
+		end
+		if Value == "Purple v2" then
+		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Purple2"):FireServer()
+		end
+	end    
+})
+
+Tab:AddDropdown({
+	Name = "Unknown",
+	Default = "1",
+	Options = {"Slicing Exorcism", "Fortune Flare Slam", "Exploded Blood", "Blood Slashes", "Domain Expansion", "Genos move", "Genos move 2"},
+	Callback = function(Value)
+		if Value == "Slicing Exorcism" then
+		for i = 1, 100 do
+wait()
+workspace["Choso Moveset Giveaway"].StarterPack["Slicing Exorcism"]["Slicing Exorcism"].Fire:FireServer()
+end
+		end
+		if Value == "Fortune Flare Slam" then
+for i = 1, 5 do
+	workspace["Hakari Moveset Giveaway V2"].StarterPack["Fortune Flare Slam"]["Fortune Flare Slam"].RemoteEvent:FireServer()
+end
+		end
+		if Value == "Exploded Blood" then
+		for i = 1, 10 do
+workspace["Choso Moveset Giveaway"].StarterPack["Exploded Blood"]["Exploded Blood"].Remote:FireServer()
+end
+		end
+		if Value == "Blood Slashes" then
+		for i = 1, 35 do
+workspace["Choso Moveset Giveaway"].StarterPack["Blood Slashes Barrage"]["Blood Slashes Barrage"].RemoteEvent:FireServer()
+end
+		end
+		if Value == "Domain Expansion" then
+		game:GetService("ReplicatedStorage").Remotes.Characters.Sukuna.DomainExpansion.DomainExpansionRemote:FireServer()
+		end
+		if Value == "Genos move" then
+		for i = 1, 10 do
+game:GetService("ReplicatedStorage").Remotes.Event:FireServer()
+end
+		end
+		if Value == "Genos move 2" then
+		for i = 1, 10 do
+game:GetService("ReplicatedStorage").Remotes.Event2:FireServer()
+end
+		end
+	end    
+})
+
+Tab:AddButton({
+ Name = "Godmode",
+ Callback = function()
+        for i = 1, 3 do
+wait(1.5)
+game:GetService("ReplicatedStorage").Remotes.Imagi:FireServer()
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "King Of Cursed",
+ Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("KingofCurses"):FireServer()
+   end
+})
+Tab:AddButton({
+ Name = "Powerful Dismantle",
+ Callback = function()
+        for i = 1, 50 do
+game:GetService("Players").LocalPlayer.Backpack.Dismantle.LocalScript.Event:FireServer()
+end
+   end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Options",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Anti slow",
+	Callback = function()
+	repeat wait()
+local Player = game.Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+
+local initialSpeed = 16
+local currentSpeed = Character.Humanoid.WalkSpeed
+
+if currentSpeed >= 0 and currentSpeed <= 10 then
+    Character.Humanoid.WalkSpeed = initialSpeed
+else
+    Character.Humanoid.WalkSpeed = currentSpeed
+end
+until game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0
+	end    
+})
+
+Tab:AddButton({
+	Name = "Anti inventory lock",
+	Callback = function()
+      while true do
+ task.wait()
+  local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+
+local sgui = game:GetService("StarterGui")
+sgui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+end
+	end    
+})
+
+Tab:AddButton({
+ Name = "Anti jump block",
+ Callback = function()
+        while true do
+  wait()
+local Player = game.Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, true)
+
+local initialJump = 50
+local currentJump = Character.Humanoid.JumpPower
+
+if currentJump >= 0 and currentJump <= 10 then
+    Character.Humanoid.JumpPower = initialJump
+else
+    Character.Humanoid.JumpPower = currentJump
+end
+ end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Anti reclining",
+ Callback = function()
+        local plr = game.Players.LocalPlayer
+local char = plr.Character
+  for _, child in pairs(char:GetChildren()) do
+    if child:IsA("BasePart") then
+      child.Massless = false
+      child.CustomPhysicalProperties = PhysicalProperties.new(math.huge, math.huge, math.huge) 
+    end
+  end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Fix Camera",
+ Callback = function()
+        speaker = game.Players.LocalPlayer
+workspace.CurrentCamera:remove()
+ task.wait()
+ repeat wait() until speaker.Character ~= nil
+ workspace.CurrentCamera.CameraSubject = speaker.Character:FindFirstChildWhichIsA('Humanoid')
+ workspace.CurrentCamera.CameraType = "Custom"
+ speaker.CameraMinZoomDistance = 0.5
+ speaker.CameraMaxZoomDistance = 400
+ speaker.CameraMode = "Classic"
+ speaker.Character.Head.Anchored = false
+   end    
+})
+
+Tab:AddButton({
+ Name = "Auto Defrost",
+ Callback = function()
+        while true do
+  wait()
+for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+   task.spawn(function()
+    for i, x in next, v.Character:GetDescendants() do
+     if x.Name ~= floatName and x:IsA("BasePart") and x.Anchored then
+      x.Anchored = false
+     end
+    end
+   end)
+end
+end
+   end    
+})
